@@ -25,6 +25,12 @@ easy to get wrong later:
   `0112_sleep_is_out_of_mlp_scope.sql`.
 - **A voice is deleted only with the account.** There is no standalone delete-voice option in the
   app. The `delete-voice` function exists server side but nothing calls it.
+- **Account deletion offers both routes.** Immediate, which is irreversible, and a seven day grace
+  period that can be cancelled from the same screen. Both are real; see `ios/Koya/DeleteAccount.swift`.
+- **The free sample is per device, disclosed in section 8.** It uses Apple's DeviceCheck, and Koya
+  keeps no record of a deleted account. If a tombstone table of deleted identifiers is ever added,
+  that section becomes false. Apple also requires the reset path that `support.html` promises, so
+  that promise is not decoration.
 
 The minimum age is **18**, and it is enforced in three places: these pages, `AgeTape.low` in
 `ios/Koya/OnboardingBits.swift`, and the `profiles_age_check` constraint from migration `0125`.
