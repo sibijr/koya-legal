@@ -25,8 +25,9 @@ easy to get wrong later:
   `0112_sleep_is_out_of_mlp_scope.sql`.
 - **A voice is deleted only with the account.** There is no standalone delete-voice option in the
   app. The `delete-voice` function exists server side but nothing calls it.
-- **Account deletion offers both routes.** Immediate, which is irreversible, and a seven day grace
-  period that can be cancelled from the same screen. Both are real; see `ios/Koya/DeleteAccount.swift`.
+- **Account deletion is immediate.** There is no seven day grace period in the app any more; see
+  `ios/Koya/DeleteAccount.swift`. The server still supports one, so an account that requested it
+  before the change can still cancel, but these pages must not offer it to anybody new.
 - **The free sample is per device, disclosed in section 8.** It uses Apple's DeviceCheck, and Koya
   keeps no record of a deleted account. If a tombstone table of deleted identifiers is ever added,
   that section becomes false. Apple also requires the reset path that `support.html` promises, so
