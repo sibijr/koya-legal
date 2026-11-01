@@ -13,7 +13,7 @@
 <header>
   <p class="brand">Koya</p>
   <h1>Privacy Policy</h1>
-  <p class="dates">Effective 28 September 2026. Last updated 28 September 2026.</p>
+  <p class="dates">Effective 28 September 2026. Last updated 1 November 2026.</p>
 </header>
 
 <p>Koya writes you short stories about your own life, set tomorrow and written as though they
@@ -60,7 +60,7 @@ it. It describes what the app actually does today, not what we might do later.</
 
 <h2 id="who">1. Who we are</h2>
 
-<p>Koya is operated by the developer of the Koya iOS app ("Koya", "we", "us"), who is the data
+<p>Koya is operated by the developer of the Koya apps for iOS and Android ("Koya", "we", "us"), who is the data
 controller for the information described here. For any privacy question, including a request to
 access or delete your data, contact us at
 <a href="mailto:koyamanifest@gmail.com">koyamanifest@gmail.com</a>.</p>
@@ -68,10 +68,14 @@ access or delete your data, contact us at
 <h2 id="collect">2. What we collect</h2>
 
 <h3>Account</h3>
-<p>Koya uses <strong>Sign in with Apple</strong>. We receive a stable identifier for your Apple
-Account and, if you allow it, an email address. If you choose Apple's <em>Hide My Email</em>, what we
-receive is Apple's private relay address rather than your real one, and we never learn your real
-address. We do not operate passwords, so there is no Koya password to lose.</p>
+<p>On iPhone, Koya uses <strong>Sign in with Apple</strong>. We receive a stable identifier for your
+Apple Account and, if you allow it, an email address. If you choose Apple's <em>Hide My Email</em>,
+what we receive is Apple's private relay address rather than your real one, and we never learn your
+real address.</p>
+<p>On Android, Koya uses <strong>Sign in with Google</strong>. We receive a stable identifier for your
+Google Account, your email address and the name on that account. We do not receive your Google
+password, your contacts, or anything else in your Google Account.</p>
+<p>Either way, we do not operate passwords, so there is no Koya password to lose.</p>
 
 <h3>What you tell us during onboarding and afterwards</h3>
 <ul>
@@ -108,7 +112,7 @@ playback.</p>
 
 <h3>Subscription</h3>
 <p>Whether your subscription is active, which product it is, and when it expires. Payment itself is
-handled by Apple. <strong>We never see your card, and we never receive your payment details.</strong></p>
+handled by Apple on iPhone and by Google Play on Android. <strong>We never see your card, and we never receive your payment details.</strong></p>
 
 <h3>Device and technical data</h3>
 <p>Collected automatically when you use the app: a device and installation identifier, your device
@@ -204,8 +208,13 @@ share your information with anyone else, and we do not use data brokers.</p>
   </tr>
   <tr>
     <td>Apple</td>
-    <td>Sign-in, payments, and the DeviceCheck bit described in section 8</td>
+    <td>Sign-in, payments, and the DeviceCheck bit described in section 8 (iPhone only)</td>
     <td>Handled by Apple under Apple's own privacy policy. The DeviceCheck bit identifies a device, not you.</td>
+  </tr>
+  <tr>
+    <td>Google</td>
+    <td>Sign-in and Google Play billing (Android only)</td>
+    <td>Handled by Google under Google's own privacy policy. We receive your account identifier, email and name at sign-in, and whether a purchase succeeded.</td>
   </tr>
 </table>
 
@@ -265,14 +274,16 @@ order:</p>
   you want your voice removed, delete your account, or write to us and we will remove it for you.</p>
 </div>
 
-<p>Deleting your Koya account does not cancel your Apple subscription. Apple subscriptions are
-managed by Apple, and you cancel them in
-<a href="https://apps.apple.com/account/subscriptions">your App Store account settings</a>.</p>
+<p>Deleting your Koya account does not cancel your subscription, because the store that billed you
+manages it. On iPhone, cancel in
+<a href="https://apps.apple.com/account/subscriptions">your App Store account settings</a>. On
+Android, cancel in
+<a href="https://play.google.com/store/account/subscriptions">Google Play subscriptions</a>.</p>
 
 <h3>One thing that outlives your account, and it is not yours</h3>
 
 <p>Koya's free sample is offered once per device rather than once per account. To know whether a
-device has already had it, we use <strong>Apple's DeviceCheck</strong>, a feature of iOS that lets
+device has already had it, on iPhone we use <strong>Apple's DeviceCheck</strong>, a feature of iOS that lets
 an app store two bits of information about a device on Apple's own servers. We set one of those bits
 to record that this device has used its free sample.</p>
 
@@ -290,6 +301,9 @@ We want to be exact about what it is and is not:</p>
   <li>It gates the free sample and nothing else. It never prevents you creating an account, signing
       in, subscribing, or using anything you have paid for.</li>
 </ul>
+
+<p>Koya for Android does not use an equivalent of DeviceCheck. On Android nothing is stored about
+your device after you delete your account.</p>
 
 <p>If a device is refusing you a free sample you never used, for example because you bought the
 phone second hand, write to
