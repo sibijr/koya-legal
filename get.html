@@ -23,35 +23,59 @@
   .nav { padding:12px 16px; }
 
   /* Hero fills the first screen; the button sits in the thumb zone */
-  .get-hero { min-height:min(100svh, 920px); align-items:flex-end; }
+  .get-hero { min-height:min(100svh, 920px); align-items:flex-end; background:#2A1220 url(assets/hero-poster.jpg) 76% 20%/cover no-repeat; }
   .get-hero .hero-video { object-position:76% 20%; }
   .get-hero .hero-shade { background:linear-gradient(to bottom, rgba(42,14,28,.25) 0%, rgba(42,14,28,.15) 30%, rgba(42,14,28,.8) 58%, #2A1220 100%); }
   .get-hero .hero-inner { display:block; text-align:center; max-width:520px; padding:0 20px calc(28px + env(safe-area-inset-bottom)); }
   .get-hero .kicker { margin-bottom:14px; }
   .get-hero h1 { font-size:clamp(44px, 12vw, 72px); line-height:1; }
-  .get-hero .lede { font-size:17px; margin:16px auto 24px; max-width:400px; }
+  .get-hero .lede { font-size:17px; margin:14px auto 18px; max-width:380px; }
 
-  /* The download button: big, bright, glowing */
-  .dl { position:relative; display:flex; align-items:center; justify-content:center; gap:12px; width:100%; max-width:420px; margin:0 auto;
-    min-height:64px; padding:0 24px; border-radius:20px; text-decoration:none; overflow:hidden; isolation:isolate;
-    background:linear-gradient(135deg, #FFE0C7 0%, #FFB3C8 50%, #F48FB1 100%); color:#3A1A2A;
-    font:700 19px/1.1 Inter, -apple-system, sans-serif; letter-spacing:-.01em;
-    box-shadow:0 0 0 1px rgba(255,255,255,.6) inset, 0 14px 40px rgba(244,143,177,.55), 0 0 0 0 rgba(255,179,200,.6);
-    animation:glow 2.4s ease-in-out infinite; -webkit-tap-highlight-color:transparent; transition:transform .15s; }
+  /* The download button: vivid, centered, glowing */
+  .dl { position:relative; display:flex; align-items:center; justify-content:center; gap:10px; width:100%; max-width:400px; margin:0 auto;
+    min-height:66px; padding:0 24px; border-radius:999px; text-decoration:none; overflow:hidden; isolation:isolate; text-align:center;
+    background:linear-gradient(135deg, #FF9A8B 0%, #FF5E8A 55%, #E0457B 100%); color:#fff;
+    font:700 20px/1 Inter, -apple-system, sans-serif; letter-spacing:-.01em; text-shadow:0 1px 2px rgba(120,20,60,.35);
+    box-shadow:0 0 0 1px rgba(255,255,255,.35) inset, 0 16px 44px rgba(255,94,138,.6);
+    animation:glow 2.2s ease-in-out infinite; -webkit-tap-highlight-color:transparent; transition:transform .15s; }
   .dl:active { transform:scale(.97); }
-  .dl svg { width:26px; height:26px; fill:currentColor; flex:none; }
-  .dl .two { display:flex; flex-direction:column; align-items:flex-start; text-align:left; }
-  .dl small { font:600 11px/1.2 Inter, sans-serif; letter-spacing:.06em; text-transform:uppercase; opacity:.75; }
+  .dl svg { width:24px; height:24px; fill:currentColor; flex:none; margin-top:-3px; }
+  .dl .arrow { font-size:22px; transition:transform .2s; }
   .dl::after { content:""; position:absolute; inset:0; z-index:-1;
-    background:linear-gradient(110deg, transparent 30%, rgba(255,255,255,.65) 48%, transparent 66%); transform:translateX(-120%);
-    animation:sheen 3.2s ease-in-out infinite 1s; }
-  @keyframes glow { 50% { box-shadow:0 0 0 1px rgba(255,255,255,.6) inset, 0 18px 50px rgba(244,143,177,.75), 0 0 0 10px rgba(255,179,200,0); } }
+    background:linear-gradient(110deg, transparent 30%, rgba(255,255,255,.55) 48%, transparent 66%); transform:translateX(-120%);
+    animation:sheen 3s ease-in-out infinite 1s; }
+  @keyframes glow { 50% { box-shadow:0 0 0 1px rgba(255,255,255,.35) inset, 0 20px 60px rgba(255,94,138,.85), 0 0 0 8px rgba(255,94,138,.12); transform:scale(1.015); } }
   @keyframes sheen { 0% { transform:translateX(-120%); } 45%,100% { transform:translateX(120%); } }
-  .dl-note { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:14px; color:rgba(255,240,235,.85); }
-  .dl-note span::before { content:"✓ "; color:#FFB3C8; font-weight:700; }
+  .dl-sub { margin:12px 0 0; font-size:13px; color:rgba(255,240,235,.7); text-align:center; }
+  .dl-note { display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-top:16px; }
+  .dl-note span { font-size:13px; font-weight:600; color:#FFE6DC; padding:7px 12px; border-radius:999px;
+    background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); }
+
+  /* Free badge and desire chips */
+  .badge { display:inline-flex; align-items:center; gap:8px; padding:8px 16px; border-radius:999px; margin-bottom:16px;
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.3); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    font:600 13px/1 Inter, sans-serif; color:#fff; letter-spacing:.02em; }
+  .badge i { width:8px; height:8px; border-radius:50%; background:#7CF0A9; box-shadow:0 0 0 0 rgba(124,240,169,.7); animation:live 1.8s infinite; }
+  @keyframes live { 70% { box-shadow:0 0 0 8px rgba(124,240,169,0); } }
+  .wants { overflow:hidden; margin:0 -20px 22px; -webkit-mask-image:linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent); mask-image:linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent); }
+  .wants div { display:flex; gap:8px; width:max-content; animation:marq 26s linear infinite; }
+  .wants span { font:500 italic 19px/1 var(--serif); color:#FFE6DC; padding:9px 16px; border-radius:999px; background:rgba(58,26,42,.45); border:1px solid rgba(255,214,200,.25); white-space:nowrap; }
+
+  /* What you'll hear */
+  .hear { max-width:460px; margin:-8px auto 0; padding:20px; border-radius:24px; background:var(--surface); border:1px solid var(--rule);
+    box-shadow:0 30px 60px -30px rgba(110,47,77,.4); text-align:left; position:relative; z-index:2; }
+  .hear-top { display:flex; align-items:center; gap:12px; }
+  .hear-top img { width:42px; height:42px; border-radius:11px; }
+  .hear-top div { flex:1; } .hear-top b { display:block; font-size:15px; } .hear-top small { color:var(--ink2); font-size:12px; }
+  .hear .eq { display:flex; gap:3px; align-items:center; height:24px; }
+  .hear .eq i { width:3px; height:22px; border-radius:2px; background:var(--signal); animation:eq 1s ease-in-out infinite; }
+  .hear .eq i:nth-child(2n) { animation-delay:-.4s } .hear .eq i:nth-child(3n) { animation-delay:-.7s }
+  .hear p { font:500 21px/1.45 var(--serif); margin:14px 0 0; color:var(--ink); }
+  .hear p em { color:var(--signal); }
 
   /* Body */
-  .get-body { background:linear-gradient(#2A1220, var(--plum) 120px, var(--paper) 120px); padding:0 16px 140px; }
+  .get-body { background:linear-gradient(#2A1220, #2A1220 60px, var(--paper) 60px); padding:0 16px 140px; }
+  .reel-wrap { padding-top:44px; }
   .reel { width:min(72vw, 300px); aspect-ratio:9/16; margin:0 auto; border-radius:28px; overflow:hidden; background:#1a1214;
     box-shadow:0 30px 60px -20px rgba(110,47,77,.55), 0 0 0 6px rgba(255,255,255,.6); }
   .reel video { width:100%; height:100%; object-fit:cover; display:block; }
@@ -74,7 +98,7 @@
   .sticky.show { transform:none; }
   .sticky .row { display:flex; align-items:center; gap:12px; max-width:460px; margin:0 auto; }
   .sticky img { width:44px; height:44px; border-radius:11px; flex:none; }
-  .sticky .dl { min-height:52px; font-size:16px; border-radius:16px; }
+  .sticky .dl { min-height:54px; font-size:17px; animation:none; }
   .sticky .dl svg { width:20px; height:20px; }
 
   @media (min-width:700px) { .get-hero .hero-inner { padding-bottom:70px; } }
@@ -91,19 +115,26 @@
   <video class="hero-video" src="assets/hero.mp4" poster="assets/hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
   <div class="hero-shade"></div>
   <div class="hero-inner">
-    <p class="kicker">Manifest in your own voice</p>
+    <span class="badge"><i></i>Your first story is free</span>
     <h1>Your dream life,<br><em>read to you.</em></h1>
-    <p class="lede">Tell Koya what you want. Every morning it writes the story of you already living it, and reads it in your voice.</p>
-    <a class="dl" id="heroDl" href="https://apps.apple.com/app/id6812510895" data-cta="hero">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.72-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.86-.76-1.47.02-2.83.86-3.59 2.18-1.53 2.65-.39 6.57 1.1 8.72.73 1.05 1.6 2.23 2.730 2.19 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.4 1.2-2.46-.03-.01-2.3-.88-2.32-3.49zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.65-1.05 1.69-.92 2.68.97.08 1.96-.49 2.56-1.23z"/></svg>
-      <span class="two"><small>Download free on the</small>App Store</span>
-    </a>
-    <div class="dl-note"><span>First story free</span><span>iPhone</span><span>44 languages</span></div>
+    <p class="lede">Every morning, a story of you already living it. Read in <b>your own voice</b>.</p>
+    <div class="wants" aria-hidden="true"><div>
+      <span>the dream home</span><span>the job offer</span><span>the love</span><span>the trip</span><span>the calm</span><span>the abundance</span><span>the glow up</span>
+      <span>the dream home</span><span>the job offer</span><span>the love</span><span>the trip</span><span>the calm</span><span>the abundance</span><span>the glow up</span>
+    </div></div>
+    <a class="dl" id="heroDl" href="https://apps.apple.com/app/id6812510895" data-cta="hero"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.72-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.86-.76-1.47.02-2.83.86-3.59 2.18-1.53 2.65-.39 6.57 1.1 8.72.73 1.05 1.6 2.23 2.73 2.19 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.4 1.2-2.46-.03-.01-2.3-.88-2.32-3.49zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.65-1.05 1.69-.92 2.68.97.08 1.96-.49 2.56-1.23z"/></svg><span>Get Koya Free</span><span class="arrow">→</span></a>
+    <p class="dl-sub">Download on the App Store · iPhone</p>
+    <div class="dl-note"><span>44 languages</span><span>Your voice</span><span>2 min a day</span></div>
   </div>
 </section>
 
 <section class="get-body">
-  <div class="reel"><video src="assets/koya-ad.mp4" poster="assets/koya-ad-poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+  <div class="hear">
+    <div class="hear-top"><img src="assets/icon.webp" alt=""><div><b>The studio keys</b><small>Tomorrow, 7:00 · in your voice</small></div>
+      <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></div>
+    <p>"The key was heavier than I expected. I turned it once, and the morning light was already on the long white table, <em>exactly where I had pictured it.</em>"</p>
+  </div>
+  <div class="reel-wrap"><div class="reel"><video src="assets/koya-ad.mp4" poster="assets/koya-ad-poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div></div>
 
   <h2>Three steps. <em>Five minutes.</em></h2>
   <ul class="get-steps">
@@ -115,9 +146,7 @@
   <div class="cta-card">
     <h3>Your first story <em>is free.</em></h3>
     <p>Tell Koya tonight. Hear it tomorrow morning.</p>
-    <a class="dl" href="https://apps.apple.com/app/id6812510895" data-cta="bottom">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.72-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.86-.76-1.47.02-2.83.86-3.59 2.18-1.53 2.65-.39 6.57 1.1 8.72.73 1.05 1.6 2.23 2.73 2.19 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.4 1.2-2.46-.03-.01-2.3-.88-2.32-3.49zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.65-1.05 1.69-.92 2.68.97.08 1.96-.49 2.56-1.23z"/></svg>
-      <span class="two"><small>Download free on the</small>App Store</span>
+    <a class="dl" href="https://apps.apple.com/app/id6812510895" data-cta="bottom"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.72-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.86-.76-1.47.02-2.83.86-3.59 2.18-1.53 2.65-.39 6.57 1.1 8.72.73 1.05 1.6 2.23 2.73 2.19 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.4 1.2-2.46-.03-.01-2.3-.88-2.32-3.49zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.65-1.05 1.69-.92 2.68.97.08 1.96-.49 2.56-1.23z"/></svg><span>Get Koya Free</span><span class="arrow">→</span>
     </a>
   </div>
 
@@ -127,9 +156,7 @@
 <div class="sticky" id="sticky">
   <div class="row">
     <img src="assets/icon.webp" alt="">
-    <a class="dl" href="https://apps.apple.com/app/id6812510895" data-cta="sticky">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.72-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.86-.76-1.47.02-2.83.86-3.59 2.18-1.530 2.65-.39 6.57 1.1 8.72.73 1.05 1.6 2.23 2.73 2.19 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.4 1.2-2.46-.03-.01-2.3-.88-2.32-3.49zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.65-1.05 1.69-.92 2.68.97.08 1.96-.49 2.56-1.23z"/></svg>
-      Get Koya · First story free
+    <a class="dl" href="https://apps.apple.com/app/id6812510895" data-cta="sticky"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.72-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.86-.76-1.47.02-2.83.86-3.59 2.18-1.53 2.65-.39 6.57 1.1 8.72.73 1.05 1.6 2.23 2.73 2.19 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.4 1.2-2.46-.03-.01-2.3-.88-2.32-3.49zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.65-1.05 1.69-.92 2.68.97.08 1.96-.49 2.56-1.23z"/></svg><span>Get Koya Free</span>
     </a>
   </div>
 </div>
@@ -140,7 +167,11 @@
   // Show the sticky button whenever the hero button is not on screen
   new IntersectionObserver(es => st.classList.toggle('show', !es[0].isIntersecting && scrollY > 50))
     .observe(document.getElementById('heroDl'));
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelectorAll('video').forEach(v => { v.pause(); v.removeAttribute('autoplay'); });
+  // Low Power Mode and reduced motion block autoplay: hide the video and keep the still frame behind it
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hero = document.querySelector('.hero-video');
+  if (reduce) { hero.remove(); } else { const p = hero.play(); if (p) p.catch(() => hero.remove()); }
+  document.querySelectorAll('.reel video').forEach(v => { if (reduce) v.removeAttribute('autoplay'); else { const q = v.play(); if (q) q.catch(() => {}); } });
 </script>
 </body>
 </html>

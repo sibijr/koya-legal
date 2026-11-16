@@ -234,3 +234,8 @@ section > .wrap { padding-top:clamp(80px, 11vw, 140px); padding-bottom:clamp(80p
   *, *::before, *::after { animation:none !important; transition:none !important; }
   .reveal { opacity:1; transform:none; }
 }
+
+/* iOS draws a play glyph over muted videos when autoplay is blocked (Low Power Mode). Never show it. */
+video::-webkit-media-controls-start-playback-button { display:none !important; -webkit-appearance:none; }
+video::-webkit-media-controls { display:none !important; }
+.hero { background-size:cover; background-position:center; }

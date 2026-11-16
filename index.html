@@ -35,7 +35,7 @@
 </header>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" style="background-image:url(assets/hero-poster.jpg);background-position:70% center">
   <video class="hero-video" src="assets/hero.mp4" poster="assets/hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
   <div class="hero-shade"></div>
   <div class="hero-grain"></div>
@@ -128,7 +128,7 @@
 </section>
 
 <!-- VOICE -->
-<section class="voice">
+<section class="voice" style="background:#3A1A2A url(assets/ambient-poster.jpg) center/cover">
   <video class="voice-video" src="assets/ambient.mp4" poster="assets/ambient-poster.jpg" autoplay muted loop playsinline preload="none" aria-hidden="true"></video>
   <div class="voice-shade"></div>
   <div class="wrap voice-inner">
@@ -267,7 +267,8 @@
   // Background videos: play only on screen, never with reduced motion
   document.querySelectorAll('video[autoplay]').forEach(v => {
     if (reduce) { v.pause(); v.removeAttribute('autoplay'); return; }
-    new IntersectionObserver(es => es[0].isIntersecting ? v.play().catch(() => {}) : v.pause()).observe(v);
+    const first = v.play(); if (first) first.catch(() => { v.style.visibility = 'hidden'; });
+    new IntersectionObserver(es => es[0].isIntersecting ? v.play().catch(() => { v.style.visibility = 'hidden'; }) : v.pause()).observe(v);
   });
 </script>
 </body>
