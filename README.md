@@ -1,8 +1,14 @@
-# Koya — legal pages
+# Koya — website and legal pages
 
-The Terms of Use and Privacy Policy for the Koya iOS app, served as a static site by GitHub Pages.
+https://koyamanifest.com, served by GitHub Pages from this repository. DNS is on Cloudflare
+(apex A records to GitHub Pages, `www` CNAME to sibijr.github.io, all DNS only). The old
+`sibijr.github.io/koya-legal/...` links redirect here automatically, so links already in the app
+and App Store Connect keep working.
 
-- `index.html` — landing page linking to both documents
+- `index.html` — the marketing site (`site.css`). Hero and ambient loops are Veo clips from TakeWeaver
+- `get.html` — the single-purpose landing page for paid ads (`/get`)
+- `legal.html` — the old index listing the documents
+- `support.html` — Support
 - `terms.html` — Terms of Use
 - `privacy.html` — Privacy Policy
 - `style.css` — Koya's brand tokens, taken from `ios/Koya/Theme.swift`
